@@ -2,8 +2,10 @@ FROM php:7.2-apache
 
 RUN apt-get update \
   && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev libmcrypt-dev \
-  && docker-php-ext-install pdo_mysql mysqli mbstring gd iconv \
-  && pecl install xdebug
+  && docker-php-ext-install pdo_mysql mysqli mbstring gd iconv zip\
+  && pecl install mcrypt-1.0.1 \
+  && pecl install xdebug \
+  && docker-php-ext-enable mcrypt
 RUN a2enmod rewrite
 RUN a2enmod include
 
