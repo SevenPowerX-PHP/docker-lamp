@@ -12,6 +12,9 @@ RUN a2enmod include
 COPY ./base.conf /etc/apache2/sites-available/base.conf
 RUN a2ensite base.conf
 
+RUN chown www-data:www-data -R /var/www
+
+
 COPY php.ini /usr/local/etc/php/
 
 
