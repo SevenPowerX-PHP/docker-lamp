@@ -18,3 +18,8 @@ $ docker-compose up -d
 phpMyAdmin http://192.168.99.100:8080/
 
 install OpenCArt http://192.168.99.100:8010/
+
+
+#### 
+chmod 777 app/admin/config
+chmod 777 app/config
